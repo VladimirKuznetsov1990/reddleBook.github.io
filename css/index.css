@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(/img/background.png);
+  background-image: url(../img/background.png);
   background-size: 100% 100%;
 }
 
@@ -25,7 +25,7 @@ body {
   width: 500px;
   height: 700px;
   border-radius: 5px 40px 40px 5px;
-  background-image: url("/img/pageleftnew.png");
+  background-image: url(../img/pageleftnew.png);
   background-size: 100% 100%;
   padding: 0;
   margin: 0;
@@ -50,7 +50,7 @@ body {
   border-radius: 15px;
   width: 500px;
   height: 700px;
-  background-image: url("/img/book.png");
+  background-image: url(../img/book.png);
   background-size: 100% 100%;
   box-shadow: 5px 0 50px 0 inset #262626;
   transition: all 0.8s ease-out;
@@ -109,7 +109,7 @@ body {
 .book.open::before {
   display: flex;
   transform: rotatey(-160deg) translatex(-20px);
-  background-image: url(/img/pageleftnew.png);
+  background-image: url(../img/pageleftnew.png);
   box-shadow: 30px 0 15px 0 inset rgb(70, 70, 70);
   height: 700px;
   width: 499px;
@@ -197,7 +197,7 @@ body {
         padding-left: 20px;
         display: flex;
         justify-content: flex-start;
-        background-image: url(/img/background.png);
+        background-image: url(../img/background.png);
         background-size: 100%;
       }
       
