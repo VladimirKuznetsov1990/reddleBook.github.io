@@ -1,0 +1,245 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* outline: 4px solid green !important; */
+}
+
+body {
+
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/img/background.png);
+  background-size: 100% 100%;
+}
+
+.root {
+  max-width: 1152px;
+}
+
+.book {
+  position: relative;
+  width: 500px;
+  height: 700px;
+  border-radius: 5px 40px 40px 5px;
+  background-image: url("/img/pageleftnew.png");
+  background-size: 100% 100%;
+  padding: 0;
+  margin: 0;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-out;
+  color: transparent;
+}
+
+.btn {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.book::before {
+  content: "";
+  top: 0;
+  display: block;
+  position: absolute;
+  border-radius: 15px;
+  width: 500px;
+  height: 700px;
+  background-image: url("/img/book.png");
+  background-size: 100% 100%;
+  box-shadow: 5px 0 50px 0 inset #262626;
+  transition: all 0.8s ease-out;
+  transform-origin: 0 50%;
+}
+
+.book::after {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 499px;
+  height: 40px;
+  border: 5px solid #262626;
+  border-right: 10px solid black;
+  border-top: none;
+  border-radius: 20px/25%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(187, 139, 9) 0,
+    white 1px,
+    #bdc3c7 1px,
+    #d6a617 2px,
+    white 2px
+  );
+  top: 670px;
+  z-index: -1;
+  opacity: 0;
+  animation: closed 0.8s ease-out forwards;
+}
+
+@keyframes closed {
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.book.open {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 499px;
+  border-bottom: 5px solid #191d21;
+  border-right: 5px solid #191d21;
+  border-top: 5px solid #191d21;
+  color: black;
+}
+
+.book.open .btn {
+  display: none;
+}
+
+.book.open::before {
+  display: flex;
+  transform: rotatey(-160deg) translatex(-20px);
+  background-image: url(/img/pageleftnew.png);
+  box-shadow: 30px 0 15px 0 inset rgb(70, 70, 70);
+  height: 700px;
+  width: 499px;
+  border-bottom: 5px solid #191d21;
+  border-right: 5px solid #191d21;
+  border-top: 5px solid #191d21;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding-top: 85px;
+}
+
+.book.open::after {
+  display: flex;
+  animation: opened 0.5s ease-out forwards;
+}
+
+.book.expanded {
+  display: flex;
+  height: 700px;
+  width: 499px;
+}
+
+.book.expanded::before {
+  display: flex;
+  height: 690px;
+  width: 499px;
+  font-size: 3.5em;
+  padding-top: 40vh;
+}
+
+.book.expanded::after {
+  display: flex;
+  animation: none;
+}
+
+.entered__text {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.input {
+  width: 90%;
+  height: 70%;
+  border: none;
+  background: none;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: +0.1em;
+  font-size: 34px;
+  font-family: "Great Vibes", cursive;
+}
+
+.input:focus {
+  outline: none;
+}
+
+
+.text {
+  width: 80%;
+  text-wrap: wrap;
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+  color: #191d21;
+  font-size: 36px;
+  display: inline-block;
+}
+
+.input,
+.text {
+  transition: 1s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+
+@media (max-width: 767px) {
+    body {
+        padding-left: 20px;
+        display: flex;
+        justify-content: flex-start;
+        background-image: url(/img/background.png);
+        background-size: 100%;
+      }
+      
+      .book {
+        width: 350px;
+        height: 550px;
+      }
+      
+      .book::before {
+        width: 350px;
+        height: 550px;
+      }
+      
+      .book::after {
+        width: 348px;
+        height: 40px;
+        top: 522px;
+      }
+      
+      .book.open {
+        display: flex;
+        flex-direction: column;
+        height: 650px;
+        width: 350px;
+      }
+      
+      .book.open::before {
+        height: 650px;
+        width: 350px;
+      }
+      
+      .book.expanded {
+        height: 650px;
+        width: 370px;
+      }
+      
+      .book.expanded::before {
+        height: 640px;
+        width: 199px;
+      }
+      
+      .entered__text {
+        height: 60%;
+      }  
+}
