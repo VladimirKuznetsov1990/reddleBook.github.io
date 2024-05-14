@@ -2,6 +2,9 @@ const input = document.querySelector('.input');
 const text = document.querySelector('.text');
 const arr = ['Я тебя не понимаю!', 'Может поздороваешься для начала?', 'Может спросишь меня про Тайную Комнату?', 'Псс... Не хочешь узнать про Тайную Комнату?', 'Ты случайно не Гарри Поттер?', 'Напиши: "Привет"'];
 const def = 'Задай здесь свой вопрос';
+const rofl = document.createElement('img');
+rofl.src = '../img/pngegg.png';
+rofl.className = 'rofl';
 input.value = def;
 const reddleBook = () => {
   input.classList.add('hidden');
@@ -13,7 +16,8 @@ const reddleBook = () => {
     } else if (input.value.toLowerCase().includes('комнат')) {
       text.innerText = 'Да';
     } else if (input.value.toLowerCase().includes('расска')) {
-      text.innerText = 'Ммм... окей! На самом деле это я открыл Тайную комнату! Но никто об этом не узнал, потому что я сказал всем, что это сделал Хагрид! В итоге его лишили волшебной палочки и навсегда запретили пользоваться магией! Да, я злодей!)) Ха-ха!!!';
+      text.innerText = 'Нет!';
+      text.appendChild(rofl);
     } else if (input.value.toLowerCase().includes('поттер')) {
       text.innerText = 'Пошёл ты нахрен! Мне хватило прошлой встречи!';
     } else if (input.value.toLowerCase().includes('?')) {
