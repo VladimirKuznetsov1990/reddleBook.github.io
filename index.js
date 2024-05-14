@@ -3,7 +3,7 @@ const text = document.querySelector('.text');
 const arr = ['Я тебя не понимаю!', 'Может поздороваешься для начала?', 'Может спросишь меня про Тайную Комнату?', 'Псс... Не хочешь узнать про Тайную Комнату?', 'Ты случайно не Гарри Поттер?', 'Напиши: "Привет"'];
 const def = 'Задай здесь свой вопрос';
 const rofl = document.createElement('img');
-rofl.src = '../img/pngegg.png';
+rofl.src = '/img/pngegg.png';
 rofl.className = 'rofl';
 input.value = def;
 const reddleBook = () => {
